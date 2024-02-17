@@ -1,0 +1,47 @@
+{% extends "navbar.html" %}
+
+{% block title %}ClubHub - Quiz{% endblock %}
+
+{% block style %}
+<style>
+    /* Add your CSS styles here */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .quiz-section {
+        padding: 50px;
+        text-align: center;
+    }
+    .question {
+        margin-bottom: 20px;
+    }
+    .options {
+        display: inline-block;
+        text-align: left;
+    }
+    .option {
+        margin-bottom: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="quiz-section">
+    <h2>Take the Quiz</h2>
+    <form action="/submit_quiz" method="post">
+        {% for i in range(1, 11) %}
+        <div class="question">
+            <p>Question {{ i }}: What is the capital of France?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="question{{ i }}" value="Paris"> Paris</label><br>
+                <label class="option"><input type="radio" name="question{{ i }}" value="Berlin"> Berlin</label><br>
+                <label class="option"><input type="radio" name="question{{ i }}" value="London"> London</label><br>
+                <label class="option"><input type="radio" name="question{{ i }}" value="Rome"> Rome</label><br>
+            </div>
+        </div>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+</section>
+{% endblock %}
