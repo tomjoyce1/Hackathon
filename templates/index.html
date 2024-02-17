@@ -1,0 +1,121 @@
+{% extends "navbar.html" %}
+
+{% block title %}ClubHub{% endblock %}
+
+{% block style %}
+    <style>
+        /* Add your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .hero-section {
+            background-image: url('static/newlbg.png');
+            /* Replace with your gym hero image */
+            background-size: cover;
+            background-position: center;
+            height: 780px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-family: 'Sequel Sans Semi Bold Head', Rockwell;
+
+        }
+
+        .hero-text {
+            margin-top: 1300px; /* Adjust this value to increase or decrease top margin */
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section class="hero-section">
+        <div>
+
+            <h2>Master Driving Theory</h2>
+
+            <p style="font-family: 'Sequel Sans Medium Head', Rockwell;">
+                Our driving theory test website is a dynamic <br>
+                and user-friendly web application designed to <br>
+                streamline the process of learning and preparing<br>
+                for your theory test.</p>
+        </div>
+    </section>
+
+
+    <section id="about-section" class="features-section">
+        <h2>
+            CREATE, EASILY MANAGE <br>
+            AND JOIN CLUBS, FUN <br>
+            SOCIETIES AND EVENTS <br>
+        </h2>
+
+        <div class="feature">
+            <div class="feature-content">
+                <img src="static/runrun.jpg" alt="Feature 1 Image">
+                <div class="text-content">
+                    <h3>JOIN CLUBS</h3>
+                    <p>Explore a diverse array of clubs covering various interests <br>
+                        and passions. Join communities where you can engage, learn, <br>
+                        and grow with like-minded individuals. </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-content">
+                <div class="text-content custom-left">               
+                    <h3>MANAGE CLUBS</h3>
+                    <p> Empower club leaders with intuitive tools for effective management. <br>
+                        Streamline administrative tasks, coordinate events, and foster <br>
+                        collaboration within your organization. </p>
+                </div>
+                <img src="static/hurling.jpg" alt="Feature 2 Image">
+            </div>
+        </div>
+
+        
+        <div class="feature">
+            <div class="feature-content">
+                <img src="static/gaa.jpg" alt="Feature 3 Image">
+                <div class="text-content">
+                    <h3>PARTAKE IN EVENTS</h3>
+                    <p>Discover and participate in exciting events hosted by clubs <br>
+                        across the university. Or take the lead by organizing your own <br>
+                        events, bringing your vision to life and making an impact <br>
+                        on campus life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+    <!-- Circle around mouse cursor -->
+    <div id="circle" class="circle"></div>
+    <script>
+        // JavaScript to track mouse movement and update circle position
+        window.addEventListener('mousemove', function (e) {
+            var circle = document.getElementById('circle');
+            circle.style.top = e.clientY - (circle.offsetHeight / 2) + 'px';
+            circle.style.left = e.clientX - (circle.offsetWidth / 2) + 'px';
+        });
+    </script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the "About" link element
+        var aboutLink = document.querySelector('a[href="#about-section"]');
+
+        // Add click event listener to the "About" link
+        aboutLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default behavior of the link
+            var aboutSection = document.getElementById('about-section');
+            aboutSection.scrollIntoView({ behavior: 'smooth' }); // Scroll to the about section smoothly
+        });
+    });
+</script>
+{% endblock %}
