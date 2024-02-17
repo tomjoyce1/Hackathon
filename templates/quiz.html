@@ -1,37 +1,19 @@
+<!-- quiz.html -->
 {% extends "navbar.html" %}
 
 {% block title %}ClubHub - Quiz{% endblock %}
 
 {% block style %}
-<style>
-    /* Add your CSS styles here */
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    .quiz-section {
-        padding: 50px;
-        text-align: center;
-    }
-    .question {
-        margin-bottom: 20px;
-    }
-    .options {
-        display: inline-block;
-        text-align: left;
-    }
-    .option {
-        margin-bottom: 10px;
-    }
-</style>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/quiz_styles.css') }}">
 {% endblock %}
 
 {% block content %}
+<script src="{{ url_for('static', filename='js/quiz_styles.js') }}"></script>
 <section class="quiz-section">
     <h2>Take the Quiz</h2>
-    <form action="/submit_quiz" method="post">
+    <form id="quiz-form" action="/submit_quiz" method="post">
         {% for i in range(1, 11) %}
-        <div class="question">
+        <div class="question" id="question{{ i }}">
             <p>Question {{ i }}: What is the capital of France?</p>
             <div class="options">
                 <label class="option"><input type="radio" name="question{{ i }}" value="Paris"> Paris</label><br>
@@ -39,9 +21,10 @@
                 <label class="option"><input type="radio" name="question{{ i }}" value="London"> London</label><br>
                 <label class="option"><input type="radio" name="question{{ i }}" value="Rome"> Rome</label><br>
             </div>
+            <button class="next-button" type="button">Next</button> <!-- Next button inside each question -->
         </div>
         {% endfor %}
-        <input type="submit" value="Submit">
+        <input id="submit-button" type="submit" value="Submit" style="display: none;">
     </form>
 </section>
 {% endblock %}
