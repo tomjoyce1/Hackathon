@@ -14,12 +14,12 @@
     <form id="quiz-form" action="/submit_quiz" method="post">
         {% for i in range(1, 11) %}
         <div class="question" id="question{{ i }}">
-            <p>Question {{ i }}: What is the capital of France?</p>
+            <p>Question {{ i }}: What is the  speedlimit?</p>
             <div class="options">
-                <label class="option"><input type="radio" name="question{{ i }}" value="Paris"> Paris</label><br>
-                <label class="option"><input type="radio" name="question{{ i }}" value="Berlin"> Berlin</label><br>
-                <label class="option"><input type="radio" name="question{{ i }}" value="London"> London</label><br>
-                <label class="option"><input type="radio" name="question{{ i }}" value="Rome"> Rome</label><br>
+                <label class="option"><input type="radio" name="question{{ i }}" value="Paris"> 20</label><br>
+                <label class="option"><input type="radio" name="question{{ i }}" value="Berlin"> 30</label><br>
+                <label class="option"><input type="radio" name="question{{ i }}" value="London"> 40</label><br>
+                <label class="option"><input type="radio" name="question{{ i }}" value="Rome"> 50</label><br>
             </div>
             <button class="next-button" type="button">Next</button> <!-- Next button inside each question -->
         </div>
