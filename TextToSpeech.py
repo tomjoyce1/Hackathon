@@ -7,7 +7,12 @@ import time
 
 app = Flask(__name__)
 
-OPENAI_API_TOKEN = "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"
+with open('pass.txt','r') as file:
+	passtext = " ".join(line.rstrip() for line in file)
+	# print(passtext)
+
+
+OPENAI_API_TOKEN = passtext
 api_key = os.environ["OPENAI_API_KEY"] = OPENAI_API_TOKEN
 client = openai.OpenAI()
 file_path = Path("/Users/mark/Downloads/Questions_For_Full_Licence_Test.pdf")
