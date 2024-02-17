@@ -63,19 +63,6 @@ def register():
 
 
 
-@app.route('/submit_quiz', methods=['POST'])
-def submit_quiz():
-    if request.method == 'POST':
-        score = 0
-        for i in range(1, 11):
-            answer = request.form.get('question{}'.format(i))
-            if answer == 'Paris':  # Assuming correct answer is Paris for all questions
-                score += 1
-        return render_template('quiz_result.html', score=score)
-    else:
-        return "Error: Invalid request method"
-    
-
 
 
 
@@ -116,6 +103,22 @@ def memberships():
 @app.route("/Quiz")
 def quiz():
     return render_template('quiz.html')
+
+
+@app.route("/submit_quiz", methods=['POST'])
+def submit_quiz():
+    if request.method == 'POST':
+        score = 0
+        for i in range(1, 11):
+            answer = request.form.get('question{}'.format(i))
+            if answer == 'Paris':  # Assuming correct answer is Paris for all questions
+                score += 1
+        return render_template('quiz_result.html', score=score)
+    else:
+        return "Error: Invalid request method"
+    
+
+
 
 
 @app.route("/profile", methods=["POST", "GET"])
