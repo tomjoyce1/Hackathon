@@ -1,0 +1,54 @@
+{% extends "navbar.html" %}
+
+{% block title %}ClubHub - Quiz Result{% endblock %}
+
+
+
+
+{% block style %}
+    <style>
+        /* Add your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .hero-section {
+            background-image: url('static/newlbg.png');
+            
+            background-size: cover;
+            background-position: center;
+            height: 780px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-family: 'Sequel Sans Semi Bold Head', Rockwell;
+
+        }
+
+        .hero-text {
+            margin-top: 1300px; /* Adjust this value to increase or decrease top margin */
+        }
+
+    </style>
+{% endblock %}
+
+
+
+
+
+
+
+{% block content %}
+<section class="quiz-section">
+    <h2>Quiz Result</h2>
+    <p>Your score: {{ score }} / 10</p>
+    <p>Feedback:</p>
+    <ul>
+        {% for i in range(1, 11) %}
+            <li>Question {{ i }}: {% if request.form.get('question{}'.format(i)) == 'Paris' %} Correct {% else %} Incorrect {% endif %}</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

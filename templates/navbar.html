@@ -248,22 +248,12 @@
     <nav>
         <img src="/static/clubhub_white.png" alt="Tiny Logo">
         <a href="/">Home</a>
-        {% if roleCheck == 3 %}
-            <a href="clubs">Clubs</a>
-            <a href="events">Events</a>
-            <a href="memberships">Memberships</a>
-        {% elif roleCheck == 1 %}
-            <a href="clubs">Clubs</a>
-            <a href="events">Events</a>
-            <a href="yourclub">Your Club</a>
-            <a href="memberships">Memberships</a>
-        {% elif roleCheck == 2 %}
-            <a href="clubs">Clubs</a>
-            <a href="events">Events</a>
-            <a href="users">Users</a>
-            <a href="coordinators">Coordinators</a>
-        {% endif %}
-        {% if 'username' in session %}
+            
+            <a href="Quiz">Quiz</a>
+           
+              
+               
+            {% if 'username' in session %}
             <a href="profile">{{username}}</a>
         {% else %}
             <a href="login">Login</a>

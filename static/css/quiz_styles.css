@@ -1,0 +1,31 @@
+/* quiz_styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black; /* Set background color to black */
+    color: white; /* Set text color to white */
+    font-family: 'Sequel Sans Semi Bold Head', Rockwell;
+}
+
+.quiz-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.question {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: inline-block;
+    text-align: left;
+}
+
+.option {
+    margin-bottom: 10px;
+}
+
+.button-container {
+    margin-top: 20px;
+}
